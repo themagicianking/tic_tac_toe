@@ -1,4 +1,7 @@
 class Gameplay
+  # fix this variable later
+  times_run = 0
+
   def self.interface
     @a = 1
     @b = 2
@@ -16,6 +19,7 @@ class Gameplay
               " #{@g} | #{@h} | #{@i}"
     puts board
   end
+
 end
 
 module Outcome
@@ -32,8 +36,34 @@ module Outcome
   NINE = a == "o" && e == "o" && i == "o"
   TEN = c == "o" && e == "o" && g == "o"
 
-  player_one_wins = [ONE, TWO, THREE, FOUR, FIVE]
+  ELEVEN = a == 1
+  TWELVE = b == 2
+  THIRTEEN = c == 3
+  FOURTEEN = d == 4
+  FIFTEEN = e = 5
+  SIXTEEN = f == 6
+  SEVENTEEN = g == 7
+  EIGHTEEN = h == 8
+  NINETEEN = i == 9
 
-  player_two_wins = [SIX, SEVEN, EIGHT, NINE, TEN]
+  #player_one_wins = [ONE, TWO, THREE, FOUR, FIVE]
 
+  #player_two_wins = [SIX, SEVEN, EIGHT, NINE, TEN]
+
+end
+
+def check_game_status
+  if times_run < 5
+    # continue with the game
+  elsif ONE || TWO || THREE || FOUR || FIVE
+    puts "#{player_one} wins! New game?"
+    # reset everything, end program if they select no
+  elsif SIX || SEVEN || EIGHT || NINE || TEN
+    puts "#{player_two" wins! New game?"
+    # you know the drill
+  elsif ELEVEN || TWELVE || THIRTEEN || FOURTEEN || FIFTEEN || SIXTEEN || SEVENTEEN || EIGHTEEN || NINETEEN
+    # continue with the game
+  else
+    puts "It's a tie! New game?"
+  end
 end
